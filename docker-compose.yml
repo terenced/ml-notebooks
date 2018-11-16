@@ -1,0 +1,13 @@
+version: '3.5'
+
+services:
+    notebooks:
+      container_name: ml-notebooks
+      image: ml-notebooks:latest
+      build:
+          context: .
+      working_dir: /opt/notebooks
+      volumes:
+          - .:/opt/notebooks
+      ports:
+          - "8888:8888"
